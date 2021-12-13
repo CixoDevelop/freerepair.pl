@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pl">
+	<head>
+		{% include 'pins/head.html' %}
+	</head>
+	
+	<body>
+		<main>
+			<section>
+				<div class="info-box">
+					<p>Regulamin FreeRepair.pl!</p>
+					<p>Ta aplikacja to tablica ogłoszeniowa dla wszyskich ludzi, którzy chcą pomóc planecie jednocześnie ucząc się serwisowania! Nie musisz mieć wielkich umiejętności, starczą chęci do nauki oraz pomocy. Ta strona jest dla Ciebie również jeżeli chcesz naprawić swój sprzęt za cenę części. Po prostu łączymy początkujących fachowców z ludźmi którzy mają starszy sprzęt, który uległ uszkodzeniu, ale jeżeli uda się go tanio naprawić to go nie wyrzucą, dzięki czemu nie zwiększą śladu węglowego!</p>
+					<a href="/">Powrót do aplikacji!</a>
+					<ul>
+						<li>Umieszczając tutaj ogłoszenie zgadzasz sie na to iż wszelkie dane przez Ciebie podane (za wyjątkiem hasła) znajdą się w publicznie dostępnym ogłoszeniu</li>
+						<li>Administracja nie ponosi odpowiedzialności za uczciwość serwisantów ogłaszających się w niniejszej aplikacji</li>
+						<li>Jak również nie weryfikuje umiejętności, należy dokonać tego na własną rękę</li>
+						<li>Każdy użytkownik korzystający z aplikacji akceptuje równiez <a href="{% static 'documents/rodo.pdf' %}">RODO</a></li>
+					</ul>
+				</div>
+			</section>
+		</main>
+		
+		{% include 'pins/footer.html' %}
+	</body>
+</html>

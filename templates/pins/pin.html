@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pl">
+	<head>
+		{% include 'pins/head.html' %}
+	</head>
+	
+	<body>
+		<main>
+			<nav>
+				<form action="/" method="GET" id="main-menu">
+					<input type="text" name="search" placeholder="Nazwa usługi">
+					<select name="category">
+							<option value="">Wszystkie</option>
+						{% for element in categories %}
+							<option value="{{ element.0 }}">{{ element.1 }}</option>
+						{% endfor %}
+					</select>
+					<input type="submit" value="Szukaj!">
+				</form>
+			</nav>
+
+			{% if hello %}
+				<section>
+					<div class="info-box">
+						<p>Witaj na freerepair!</p>
+						<p>Ta aplikacja to tablica ogłoszeniowa dla wszyskich ludzi, którzy chcą pomóc planecie jednocześnie ucząc się serwisowania! Nie musisz mieć wielkich umiejętności, starczą chęci do nauki oraz pomocy. Ta strona jest dla Ciebie również jeżeli chcesz naprawić swój sprzęt za cenę części. Po prostu łączymy początkujących fachowców z ludźmi którzy mają starszy sprzęt, który uległ uszkodzeniu, ale jeżeli uda się go tanio naprawić to go nie wyrzucą, dzięki czemu nie zwiększą śladu węglowego!</p>
+						<a style="margin-right: 30px;" href="dodaj">Ogłoś się!</a> <a href="edytuj">Zarządzaj ogłoszeniem!</a>
+					</div>
+				</section>
+			{% endif %}
+
+			{% if pins %}
+				{% for pin in pins %}
+				
+				<section>
+					<div class="service-box">
+						<div id="left">
+							<p>{{ pin.title }}</p>
+							<p>Status: {{ pin.getStatus }}</p>
+							<p>Umiejętności: {{ pin.getSkills }}</p>
+							<p>Zajmuję się: {{ pin.getCategory }}</p>
+						</div>
+						<div id="right">
+							<input type="submit" value="Pokaż dane kontaktowe!" id="show">
+							<ul>
+								<li>Adres email: {{ pin.email }}</li>
+								<li>Telefon: {{ pin.phone_number }}</li>
+								<li>Facebook: {{ pin.facebook }}</li>
+								<li>Adres: {{ pin.address }}</li>
+								<li>Możliwość wysyłki: {{ pin.getShipment }}</li>
+							</ul>
+						</div>
+						<div id="center">
+							<p>{{ pin.description }}</p>
+						</div>
+					</div>
+				</section>
+				
+				{% endfor %}
+			{% else %}
+				<section>
+					<div class="info-box">
+						<p>Przykro nam!</p>
+						<p>Nie widzimy żadnych ogłoszeń, może pomóc jeśli zmienisz kryteria wyszukiwania, gdyż najwidoczniej nikogo kogo szukasz tutaj nie ma!</p>
+						<p>Możesz użyc przycisku dodaj aby umieścić własne ogłoszenie, lub zarządzaj jeśli pragniesz zmienić treść swojego!</p>
+					</div>
+				</section>
+			{% endif %}
+			
+		</main>
+		
+		{% include 'pins/footer.html' %}
+		<script src="{% static 'script/personal-data-hider.js' %}" type="text/javascript"></script>
+	</body>
+</html>

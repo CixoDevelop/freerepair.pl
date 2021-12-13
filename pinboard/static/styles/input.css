@@ -1,0 +1,57 @@
+/*
+ * Plik przechowuje style dla 
+ * polow input
+ */
+
+a{
+	text-decoration: none;
+	color: var(--fill-color);
+	transition: color 0.5s;
+}
+
+a:hover{
+	color: var(--bg-color);
+}
+ 
+input[type="text"], input[type="password"], input[type='tel'], input[type='email']{
+	width: calc(80% - 10px);
+	padding: 10px;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border-radius: 10px;
+	border: var(--fill-color) 3px dashed;
+	font-size: 22px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	transition: font-size 0.5s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type='email']:focus, input[type='tel']:focus{
+	font-size: 25px;	
+}
+
+input[type="submit"], select{
+	border-radius: 10px;
+	font-size: 22px;
+	background-color: var(--bg-color);
+	color: var(--fill-color);
+	border: var(--fill-color) 3px dashed;
+	padding: 4px;
+	margin: 10px;
+	transition: color 0.5s, border-color 0.5s;
+}
+
+input[type="submit"]:hover{
+	color: var(--text-color);
+	border-color: var(--text-color);
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), 
+       only screen and (-o-min-device-pixel-ratio: 2/1), 
+       only screen and (-webkit-min-device-pixel-ratio: 2), 
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (max-width: 800px){
+	input[type="submit"], input[type="text"], input[type="password"] select{
+		font-size: 18px;
+	}
+}

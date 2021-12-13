@@ -1,0 +1,110 @@
+/*
+ * Style dla strony glownej freerepair
+ */
+ 
+ /*
+  * czcionka
+  */
+  
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+/*
+ * strona oraz kolory
+ */
+
+body{
+ 	margin: 0px;
+	padding: 0px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+	color: var(--text-color);
+	background-color: var(--body-bg-color);
+	
+	--bg-color: #17171A;
+	--body-bg-color: black;
+	--fill-color: #47FF38;
+	--text-color: white;
+	--menu-text-color: var(--fill-color);
+}
+
+/*
+ * uslugi
+ */
+
+.service-box, .info-box{
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	width: 70%;
+	padding: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border-radius: 20px;
+	border: var(--fill-color) 3px dashed;
+	clear: both;
+	text-align: justify;
+}
+
+.service-box>#left, .service-box>#right{
+	display: inline-block;
+}
+
+.service-box>#left>p:first-child, .info-box>p:first-child{
+	color: var(--fill-color);
+}
+
+.service-box>#right>ul{
+	transition: opacity 0.5s;
+	opacity: 0;
+}
+
+#footer{
+	border-top: var(--fill-color) 3px dashed;
+	color: var(--text-color);
+	text-align: center;
+	padding: 20px;
+	background-color: var(--bg-color);
+}
+
+#footer>p{
+	margin: 0px;
+}
+
+#add_edit{
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	max-width: 800px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align:center;
+	border: var(--fill-color) 3px dashed;
+	border-radius: 20px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#add_edit label{
+	color: var(--fill-color);
+}
+
+#add_edit input, #add_edit select{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#add_edit ul{
+	list-style-type: none;
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), 
+       only screen and (-o-min-device-pixel-ratio: 2/1), 
+       only screen and (-webkit-min-device-pixel-ratio: 2), 
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (max-width: 800px){
+	body, p{
+		font-size: 18px;
+	}
+}

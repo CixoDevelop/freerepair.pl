@@ -1,0 +1,75 @@
+/*
+ * Ten plik przechowuje style 
+ * potrzebne do dzialania menu
+ */
+#main-menu{
+	width: 100%;
+	background-color: var(--bg-color);
+	border-bottom: var(--fill-color) 3px dashed;
+}
+
+#main-menu>input[type="text"]{
+	width: calc(35% - 15px);
+	margin: 0px;
+	padding: 15px;
+	padding-left: 5%;
+	font-size: 22px;
+	border: none;
+	color: var(--menu-text-color);
+	background-color: var(--bg-color);
+	border-right: var(--fill-color) 3px dashed;
+	border-radius: 0px;
+	transition: font-size 0.5s;
+}
+
+#main-menu>input[type="text"]:focus{
+	font-size: 30px;	
+}
+
+#main-menu>select{
+	width: calc(40% - 30px);
+	margin: 0px;
+	padding: 15px;
+	font-size: 22px;
+	border: none;
+	color: var(--menu-text-color);
+	background-color: var(--bg-color);
+	border-right: var(--fill-color) 3px dashed;
+	border-radius: 0px;
+}
+
+#main-menu>input[type="submit"]{
+	width: calc(20% - 30px);
+	padding: 15px;
+	font-size: 22px;
+	border: none;
+	margin: 0px;
+	background-color: var(--bg-color);
+	color: var(--menu-text-color);
+	transition: color 0.5s;
+}
+
+#main-menu>input[type="submit"]:hover{
+	color: var(--text-color);	
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), 
+       only screen and (-o-min-device-pixel-ratio: 2/1), 
+       only screen and (-webkit-min-device-pixel-ratio: 2), 
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (max-width: 800px){
+	#main-menu>input[type="submit"], #main-menu>input[type="text"], #main-menu>select{
+		width: 100%;
+		padding: 20px;
+		border-bottom: var(--fill-color) 3px dashed;
+		border-right: none;
+	}
+
+	#main-menu>input[type="text"]{
+		width: calc(100% - 40px);
+	}
+	
+	#main-menu>input[type="submit"]{
+		border-bottom: none;
+	}
+}

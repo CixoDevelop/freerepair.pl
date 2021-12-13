@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang='pl'>
+	<head>
+		{% include 'pins/head.html' %}
+	</head>
+	
+	<body>
+		<div id="add_edit">
+			<form action="" method="post">
+
+				{% csrf_token %}
+				
+				{% if add %}
+					<p>Podaj swoje dane tutaj!</p>
+					<p>Uwaga, wszystkie dane za wyjątkiem hasła widoczne będą publicznie na stronie głównej aplikacji. Korzystając z aplikacji akceptujesz <a href='regulamin'>regulamin</a></p>
+				{% endif %}
+
+				{% if edit %}
+					<p>Edytuj swoje dane tutaj!</p>
+					<p>Po modyfikacji użyj przycisku zapisz, lub usuń jeżeli nie chcesz już posiadać tu ogłoszeń</p>
+				{% endif %}
+
+				{% if login %}
+					<p>Zaloguj się tutaj!</p>
+				{% endif %}
+				
+				{{ form }}
+
+				{% if add %}
+				<input type="submit" value="Dodaj!">
+				{% endif %}
+				{% if edit %}
+				<input type="submit" value="Zapisz!">
+				{% endif %}
+				{% if login %}
+				<input type="submit" value="Zaloguj!">
+				{% endif %}
+			</form>
+			{% if edit %}
+			<a href="usun"><input type="submit" value="Usuń!"></a>
+			{% endif %}
+		</div>
+
+		{% include 'pins/footer.html' %}
+	</body>
+</html>
